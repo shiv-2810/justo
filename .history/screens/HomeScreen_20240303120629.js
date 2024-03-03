@@ -39,11 +39,16 @@ const HomeScreen = ({ navigation, route }) => {
 
   const renderItem = ({ item }) => (
     <TouchableOpacity activeOpacity={0.7} onPress={() => handleItemPress(item)} style={styles.item}>
-      <Text numberOfLines={1} style={styles.itemText}>{item.title}</Text>
+      <Text style={styles.itemText}>{trimAndCapitalize(item.title)}</Text>
       <AntDesign name="edit" size={24} color="black" />
     </TouchableOpacity>
   );
 
+  function trimAndCapitalize(str) {
+    const words = str.trim().split(/\s+/);
+    const trimmedWords = words.slice(0, 2).map(word => word.charAt(0).toUpperCase() + word.slice(1));
+    return trimmedWords.join(' ');
+  }
 
   return (
     <View style={styles.container}>
@@ -75,7 +80,6 @@ const styles = StyleSheet.create({
   itemText: {
     fontSize: 18,
     fontWeight: 'bold',
-    width:'80%'
   },
   dummyView:{
     height:20

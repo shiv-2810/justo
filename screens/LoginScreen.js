@@ -1,4 +1,3 @@
-// screens/LoginScreen.js
 import React, { useState, useRef } from 'react';
 import { View, TextInput, Button, Alert, StyleSheet, ImageBackground, Text, Pressable, Animated, Vibration } from 'react-native';
 
@@ -25,8 +24,8 @@ const LoginScreen = ({ navigation }) => {
       Alert.alert('Login Failed', 'Invalid PIN');
       setPins(['', '', '', '']);
       inputRefs[0].current.focus();
-      Vibration.vibrate([100, 200, 100, 200]); // Vibrate for feedback
-      animateShake(); // Trigger shake animation
+      Vibration.vibrate([100, 200, 100, 200]);
+      animateShake(); 
     }
   };
 

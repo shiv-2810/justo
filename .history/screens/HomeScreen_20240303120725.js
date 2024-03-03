@@ -75,7 +75,6 @@ const styles = StyleSheet.create({
   itemText: {
     fontSize: 18,
     fontWeight: 'bold',
-    width:'80%'
   },
   dummyView:{
     height:20
